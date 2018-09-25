@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+	<title>Jluzon calculadora</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="js/calculadora.js"></script>
+	<style>
+		.centro,
+		body {
+			text-align: center;
+		}
+
+		#calc {
+			width: 150px;
+			height: 30px;
+			border-style: inset;
+			margin:10px auto;
+		}
+
+		button {
+			color: white;
+			background-color: black;
+		}
+	</style>
+</head>
+
+<body>
+	<h1 class="centro">XCALC Jluzon</h1>
+	<br>
+	<div id="calc1">
+		<div id="calc">
+			<div id="result">--</div>
+		</div>
+		<div>
+			<button class="btn" id="siete">7</button>
+			<button class="btn" id="ocho">8</button>
+			<button class="btn" id="nueve">9</button>
+			<button class="btn" id="dividir">/</button>
+		</div>
+		<div>
+			<button class="btn" id="cuatro">4</button>
+			<button class="btn" id="cinco">5</button>
+			<button class="btn" id="seis">6</button>
+			<button class="btn" id="mult">*</button>
+		</div>
+		<div>
+			<button class="btn" id="uno">1</button>
+			<button class="btn" id="dos">2</button>
+			<button class="btn" id="tres">3</button>
+			<button class="btn" id="suma">+</button>
+		</div>
+		<div>
+			<button class="btn" id="cero">0</button>
+			<button class="btn" id="punto">.</button>
+			<button class="btn" id="borrar">c</button>
+			<button class="btn" id="resta">-</button>
+		</div>
+		<div>
+			<button class="btn" id="igual">=</button>
+		</div>
+	</div>
+	<script>
+		$(document).ready(function() {
+			calc = newCalc();
+			$("#calc1 .btn").click(function() {
+				let val = $(this).text();
+				$("#result").text(getKey(val,calc));
+			});
+		});
+	</script>
+</body>
+
+</html>

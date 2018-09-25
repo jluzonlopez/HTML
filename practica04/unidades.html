@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+	<meta charset="utf-8">
+	<title>Jluzon Cambio de unidades Jquery</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="js/js02.js"></script>
+</head>
+
+<body>
+	<div id="v_in">6 m/s</div>
+	<div id="v_out">----</div>
+	<br>
+	<button data-toggle="tooltip" title="m/s" id="boton01" class="btn">Pasar de m/s a m/s</button>
+	<button data-toggle="tooltip" title="m/s a Km/h" id="boton02" class="btn">Pasar de m/s a Km/h</button>
+	<button data-toggle="tooltip" title="m/s a mph" id="boton03" class="btn">Pasar de m/s a mph</button>
+	<script>
+		$(document).ready(function() {
+			$("#boton01").click(function() {
+				let v_text = $("#v_in").text();
+				v_text = getn(v_text);
+				v_out = changeunids(v_text, 'm/s');
+				$("#v_out").text(v_out);
+			});
+
+			$("#boton02").click(function() {
+				let v_text = $("#v_in").text();
+				v_text = getn(v_text);
+				v_out = changeunids(v_text, 'km/h');
+				$("#v_out").text(v_out);
+			});
+
+			$("#boton03").click(function() {
+				let v_text = $("#v_in").text();
+				v_text = getn(v_text);
+				v_out = changeunids(v_text, 'mph');
+				$("#v_out").text(v_out);
+			});
+			$('[data-toggle="tooltip"]').tooltip();
+		});
+	</script>
+</body>
+
+</html>

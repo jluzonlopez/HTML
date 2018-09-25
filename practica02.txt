@@ -1,0 +1,57 @@
+Práctica 2.1 Análisis de selectores
+Ejemplo 1
+En la cabecera se definen el formato que luego van a tener los distintos cuerpos.
+La primera linea es un párrafo que no tiene el atributo class, con lo que se define simplenene con el nombre de la etiqueta. Todos los párrafos que no tengan etiqueta class se pintaran de la forma que se especifica en el style de la cabecera, en este ejemplo con letras azules y el fondo en amarillo.
+La segunda linea y la tercera si que tienen un atributo class, por lo que en el head se los identifica con ".feo" y ".inverso".
+En concreto la tercera linea, aún siendo un párrafo como la primera, no se pinta como esta definida de la primera forma ya que esta tiene un atributo class.
+
+Ejemplo 2
+La definición de estilos es la siguiente:
+Los párrafos que esten dentro de un div se van a pintar de color azul, los párrafos que estén directamemte dentro de un div apareceran el doble de grandes del tamaño normal y por último los párrafos que esten después de otro parrafo se pintara el fondo de color amarillo.
+Viendolo en el ejemplo vemos que la primera linea no se le aplica ninguno de los estilos, con lo que sale simplemente en negro.
+La segunda linea esta dentro de un párrafo y además esta directamente dentro, con lo que se le aplican las dos normas de estilo y aparece en azul y un 200% más grande.
+En la tercera volvemos a tener un párrafo, pero al no estar inmediatmente dentro de un div esa norma no se le aplica y sólo aparece pintado en azul en tamaño normal.
+Al cuarto párrafo le ocurre lo mismo que al segundo.
+La última linea es un párrafo justo después de otro párrafo, con lo que se le aplica la ultima norma de estilo que le pinta el background de color amarillo.
+
+Ejemplo 3
+Las normas de especificacion son las siguientes:
+Si hay una etiqueta con la clase "toledo" que a su vez esta dentro de otra clase con la etiqueta "españa" se muestra de color rojo.
+La segunda norma indica que las etiquetas con el atributo class "toledo" se pinten de color azul.
+La tercera norma, al tener una ",", hace que todos lo elementos con la clase "toledo" y "cuenca" aparezcan centrados.
+La última norma hace que todos los que tenga la etiqueta "castilla-la-mancha" aparezcan subrayadas.
+Si nos fijamos en las lineas podemos ver que la primera línea aparece normal. Las cuatro siguientes aparecen subrayadas porque se encuentran dentro de el cuerpo del div con la etiqueta "castilla-la-mancha" y aunque no tengan esa etiqueta se aplican el estilo porque se encuentran dentro.
+"3.Cuidad de Toledo" aparte de tener subrayado tambien se le aplica el estilo de su etiqueta más específica, que en este caso es encontrarse dentro de otro elemento con la classe "españa", con lo que se pinta en rojo.
+Ohio y estados unidos no siguen ningun criterio con lo que no se pintan de ninguna forma y la última línea aparece en azul porque no se encuentra dentro de "españa".
+
+Práctica 2.2. Análisis de selectores
+Ejemplo 4
+Según las normas son:
+Para los identificadores de tipo alfa se pintaran de color azul.
+Los identificadores de tipo alfa que además esten directamente detro de un párrafo se mostraran con el doble del tamaño.
+Las etiquetas div que sean de tipo alfa se pintaran con el color del fondo amarillo y las etiquetas alfa que se esten dentro de un div, sin importar la profundidad, se mostrar con el tipo de letra italic.
+Viendo el resultado se puede ver que la primera linea no cumple ninguna norma, la segunda sí cumple las dos primeras normas, y al ser especificaciones de distinto tipo se aplican las dos, por eso aparece azul y 200% del tamaño.
+La tercera norma no se cumple porque el único identificador que hay de tipo alfa no se encuentra en una etiqueta div y la cuarta tampoco se cumple porque no hay ningún identificador alfa como hijos de otra etiqueta div.
+
+Práctica 2.3. Análisis de selectores
+Ejemplo 5
+La primera norma que se aplica es para las clases "urjc", esta vez en vez de pasarle el color directamente le ha pasado su código.
+La segunda norma se aplica para las clases te tipo "urjc" que tambien tengan "reglamento". Que tengan las 2 al mismo tiempo (se puede ver que no tiene espacio como en el ejemplo 2, luego no quiere decir que este dentro, sino que en la misma etiqueta esten las 2 clases).
+La tercera norma se aplica para las etiquetas que tengan la clase "urjc" o "reglamento", ya que las condiciones estan separadas por una ",".
+Como se puede ver en el resultado de la página, el párrafo1, párrafo3 y el segundo párrafo 4 no cumplen ninguna de estas normas.
+Después el párrafo2 y el primer párrafo4 tienen la clase "urjc", luego se pintan del color dado con el código #CB0017 que es el rojo.
+El párrafo2 tiene un subrayado ya que cumple la segunda norma, tiene "reglament urjc" dentro de class.
+Los dos párrafos 2 y el primer párrafo4 tienen un sombreado azul ya que en su class tienen la palabra "urjc" o "reglamento", una de las dos.
+
+Práctica 2.4. Análisis de selectores
+Ejemplo 6
+La primera norma se aplica a todas las etiquetas que tengan un atributo con el nombre "class".
+La segunda norma se aplica para las etiquetas que tengan un atributo "class" con el valor "ventas" y la tercera para las etiquetas "class" que al menos uno de los valores sea "ventas".
+Viendo como queda la página se puede ver que menos el primer párrafo los otros tres cumplen la primera norma de tener un atributo "class" luego aparecen en un recuadro verde.
+A los dos últimos párrafos se le aplica la norma del tamaño ya que al menos uno de los valores del atributo "class" es "ventas". La segunda norma no se le aplica al último párrafo porque el valor de su atributo "class" no es "ventas", es "ventas promocionales", al no ser literal como se especifica en la norma no se le aplica la letra italy. En cambio al penúltimo párrafo sí porque su atributo "class" es tal y como se especifica.
+
+Práctica 2.5. Uso de selectores
+ej251.html
+ej252.html
+ej253.html
+ej254.html

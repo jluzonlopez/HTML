@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+	<title>Jluzon calculadoras</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="js/calculadora.js"></script>
+	<style>
+		.centro,
+		body {
+			text-align: center;
+		}
+
+		.calc {
+			width: 150px;
+			height: 30px;
+			border-style: inset;
+			margin:10px auto;
+		}
+
+		button {
+			color: white;
+			background-color: black;
+		}
+	</style>
+</head>
+
+<body>
+	<h1 class="centro">XCALC Jluzon</h1>
+	<br>
+	<div id="calc1">
+		<div class="calc">
+			<div id="result1">--</div>
+		</div>
+		<div>
+			<button class="btn" id="1siete">7</button>
+			<button class="btn" id="1ocho">8</button>
+			<button class="btn" id="1nueve">9</button>
+			<button class="btn" id="1dividir">/</button>
+		</div>
+		<div>
+			<button class="btn" id="1cuatro">4</button>
+			<button class="btn" id="1cinco">5</button>
+			<button class="btn" id="1seis">6</button>
+			<button class="btn" id="1mult">*</button>
+		</div>
+		<div>
+			<button class="btn" id="1uno">1</button>
+			<button class="btn" id="1dos">2</button>
+			<button class="btn" id="1tres">3</button>
+			<button class="btn" id="1suma">+</button>
+		</div>
+		<div>
+			<button class="btn" id="1cero">0</button>
+			<button class="btn" id="1punto">.</button>
+			<button class="btn" id="1borrar">c</button>
+			<button class="btn" id="1resta">-</button>
+		</div>
+		<div>
+			<button class="btn" id="1igual">=</button>
+		</div>
+	</div>
+	<br>
+	<div id="calc2">
+		<div class="calc">
+			<div id="result2">--</div>
+		</div>
+		<div>
+			<button class="btn" id="2siete">7</button>
+			<button class="btn" id="2ocho">8</button>
+			<button class="btn" id="2nueve">9</button>
+			<button class="btn" id="2dividir">/</button>
+		</div>
+		<div>
+			<button class="btn" id="2cuatro">4</button>
+			<button class="btn" id="2cinco">5</button>
+			<button class="btn" id="2seis">6</button>
+			<button class="btn" id="2mult">*</button>
+		</div>
+		<div>
+			<button class="btn" id="2uno">1</button>
+			<button class="btn" id="2dos">2</button>
+			<button class="btn" id="2tres">3</button>
+			<button class="btn" id="2suma">+</button>
+		</div>
+		<div>
+			<button class="btn" id="2cero">0</button>
+			<button class="btn" id="2punto">.</button>
+			<button class="btn" id="2borrar">c</button>
+			<button class="btn" id="2resta">-</button>
+		</div>
+		<div>
+			<button class="btn" id="igual">=</button>
+		</div>
+	</div>
+	<script>
+		$(document).ready(function() {
+			calc1 = newCalc();
+			calc2 = newCalc();
+			$("#calc1 .btn").click(function() {
+				let val1 = $(this).text();
+				$("#result1").text(getKey(val1,calc1));
+			});
+
+			$("#calc2 .btn").click(function() {
+				let val2 = $(this).text();
+				$("#result2").text(getKey(val2,calc2));
+			});
+		});
+	</script>
+</body>
+
+</html>

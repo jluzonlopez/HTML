@@ -1,0 +1,51 @@
+Nombre y apellidos: Jorge Luzon Lopez
+Login: jluzon
+
+
+Practica 1.3. W3C Validator
+Página : http://www.casareal.es/ES/Paginas/home.aspx
+Número de errores: 10 Fecha: 25/01/2018
+
+1. Uno de los errores que más aparece es el cierre de etiquetas que no han sido abiertas.
+2. Otro error que se repite es la sintaxis que utiliza al introducir un atributo. Según dice el error el fallo esta en la mala utilizacion de un espacio dentro del atributo.
+
+Página: https://www.youtube.com/ 
+Número de errores: 348 Fecha: 31/01/2018
+
+3. La utilización de el atributo "name" dentro de la etiqueta "link", que es algo que no esta permitido, es uno de los errores que mas se repite.
+4.Otro error es que en una lista ordenada utiliza un "menuitem" que no esta dentro de otro elemento de rol "menu".
+
+<ul role="menu">
+  <li>
+    <a id="menu-item-123" role="menuitem" aria-haspopup="true" aria-owns="sub-menu-123">
+      Page Link
+    </a>
+    <ul id="sub-menu-123" role="menu">
+      <li>
+        <a role="menuitem" aria-describedby="menu-item-123">
+          Subpage Link
+        </a>
+      </li>
+    </ul>
+  </li>
+</ul>
+Esto seria un ejemplo valido en el que el role "menuitem" esta dentro de otro elemento con rol="menu". En la página, "menuitem" no se encuentra dentro.
+
+5. Un Warning que parece mucho es que utiliza el atributo role="button" en una etiqueta button cuando no es necesario. La forma de arreglar este error es simplemente suprimiendo este atributo.
+6. La utilizacion de etiquetas como elementos secundarios de otros en los que no es permitido utilizarlos es uno de los errores mas comunes y repetidos que aparecen.
+Por ejemplo utiliza listas ordenadas dentro de elemtos button en contextos que no estan permitidos. El uso de ese contenido debería utilizarse donde se espera el contenido del flujo, es decir, no respeta el orden en el que son introdicidos los diferentes elementos en el código.
+
+Página: http://www.marca.com/
+Número de errores: 241 Fecha: 31/01/2018
+
+7. El primer warning que tiene es la codificacion, que no utliza utf-8.
+8. El warning más repetido en esta página es la innecesaria utilización del atributo "type" para los recursos de JavaScript. No es un error pero es un atributo que se podría eliminar.
+9. Otro de los warning es utilizar el atributo href vacio en una elemento anchor.
+define el atributo pero no le da valor ninguno.
+
+Página: https://www.twitch.tv/
+Número de errores: 1 Fecha: 31/01/2018
+
+10. El error dice que la utilizacion del elemento "style" dentro de un elemento "div" no esta permitido en ese contexto.
+Se devería utilizar como elemento secundario de un elemento principal, no de un div.
+Otras formas de poder utilizarlo seríaen el contenido de metadatos. 

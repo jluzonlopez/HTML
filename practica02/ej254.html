@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+	<title>Ej254 HTML</title>
+	<meta charset="utf-8">
+	<style>
+		p[class] {
+			text-decoration: underline;
+		}
+
+		p[class="mucho"] {
+			background-color: red;
+		}
+
+		div[class~="cualquiera"] {
+			color: green;
+		}
+	</style>
+</head>
+
+<body>
+	<p>
+		Párrafo normal
+	</p>
+	<p class="poco">
+		Este texto es poco importante
+	</p>
+	<p class="mucho">
+		Este texto es muy importante
+	</p>
+	<div class="cualquiera">
+		Un div cualquiera
+	</div>
+	<div class="caso cualquiera">
+		Un div con un caso cualquiera
+	</div>
+</body>
+
+</html>

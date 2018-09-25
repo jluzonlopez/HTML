@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+	<meta charset="utf-8">
+	<title>JLuzon CambiaBoton</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<style>
+		.oculto {
+			display: none;
+		}
+	</style>
+</head>
+
+<body>
+	<button data-toggle="tooltip" title="Oculta o muestra la foto" id="boton01">Ver foto</button>
+	<div id="marco_foto" class="oculto">
+		<img src="photos/it2.jpeg" alt="Foto de prueba">
+	</div>
+	<script>
+		$(document).ready(function() {
+			$("#boton01").click(function() {
+				$("#marco_foto").toggle("oculto")
+					if($("#boton01").text() == "Ocultar Foto"){
+						$("#boton01").text("Ver Foto");
+					}else{
+						$("#boton01").text("Ocultar Foto");
+					};
+			});
+
+			$('[data-toggle="tooltip"]').tooltip();
+		});
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+  <title>jluzon Posicion </title>
+  <meta charset="utf-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin="" />
+	<script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin=""></script>
+	<script src="dondeEsta.js"></script>
+  <style>
+    #map {
+      height: 400px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="map"></div><br>
+	<button data-toggle="tooltip" title="Recordar" id="boton_save" class="btn btn-warning" type="button">Recordar posicion</button>
+	<button data-toggle="tooltip" title="Borrar" id="boton_delete" class="btn btn-warning" type="button" hidden="hidden">Borrar posición</button>
+
+
+  <script>
+    $(document).ready(function() {
+			let lat_car,long_car;
+
+			let options = {
+				enableHighAccuracy: true,
+				timeout: 5000,
+				maximumAge: 0
+			};
+
+			function my_map(lat,long){
+				let zoom=17;
+	      let my_map = L.map('map').setView([lat, long], zoom);
+	      L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+	        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'
+	      }).addTo(my_map);
+				let mi_marcador = L.marker([lat, long]).addTo(my_map);
+				mi_marcador.bindPopup("Usted esta aquí").openPopup();
+				let car = localStorage.getItem("Coche");				
+				if(car !== null){
+					$("#boton_delete").show();
+					let otro_marcador = L.marker(car.split(",")).addTo(my_map);
+					otro_marcador.bindPopup("Coche").openPopup();
+				};
+			};
+
+
+			function error(err) {
+				console.warn(`ERROR(${err.code}): ${err.message}`);
+			};
+
+			function success(pos) {
+				lat_car = pos.coords.latitude;
+				long_car = pos.coords.longitude;
+				my_map(pos.coords.latitude,pos.coords.longitude);
+			};
+
+			navigator.geolocation.getCurrentPosition(success, error, options);
+
+			$("#boton_save").click(function() {
+				console.log("Lat car: " + lat_car);
+				console.log("Long car: " + long_car);
+				save(lat_car,long_car);
+				$("#boton_delete").show();
+			});
+
+			$("#boton_delete").click(function() {
+				delete_car();
+				$("#boton_delete").hide();
+			});
+
+    });
+  </script>
+
+</body>
+
+</html>

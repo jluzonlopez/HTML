@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+	<title>Jluzon Validación contraseña JQuery</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="js/js03.js"></script>
+</head>
+
+<body>
+	<form action="/action_page.html">
+		<label for="pass1">Password</label>
+		<input type="password" name="pass1" id="pass1">
+		<br>
+		<label for="pass2">Repeat password</label>
+		<input type="password" name="pass2" id="pass2">
+		<div id="valid1">Checking...</div>
+		<div id="valid2">Checking...</div>
+		<br>
+		<input type="submit" value="Verify">
+	</form>
+	<script>
+		$(document).ready(function() {
+			$("#pass1").on("change keyup paste mouseup", function() {
+				let cesp = ",.-{}[]!·$\"%&/()=?¿¡'";
+				plong = 8;
+				nmi = 1;
+				nmy = 1;
+				nnm = 1;
+				nes = 1;
+				let c_1 = $(this).val();
+				let v_out = password(c_1, plong, nmi, nmy, nnm, nes, cesp);
+				if (v_out) {
+					$("#valid1").text("Enhorabuena Ingeniero¡");
+				} else {
+					$("#valid1").text("Tu contraseña es malísima");
+				}
+			});
+
+			$("#pass2").on("change keyup paste mouseup", function() {
+				if ($("#pass1").val() == $(this).val()) {
+					$("#valid2").text("Contraseñas iguales");
+				} else {
+					$("#valid2").text("Contraseñas diferentes");
+				}
+			});
+		});
+	</script>
+</body>
+
+</html>

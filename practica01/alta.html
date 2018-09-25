@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+  <head>
+  	<title>Alta HTML</title>
+  	<meta charset="utf-8">
+  </head>
+	<body>
+		<form>
+			<h2>Formulario para registro</h2>
+			<h3>Datos principales</h3>
+			<label for="OS">Sistema operativo:</label>
+			<input type="text" name="OS" id="OS"><br><br>
+			<label for="name">Nombre y apellidos:</label>
+			<input type="text" name="name" id="name"><br><br>
+			<label for="mail">Correo electronico:</label>
+			<input type="email" name="mail" id="mail"><br><br>
+			Nivel del usuario:
+			<select>
+				<option value="Casual">Casual</option>
+				<option value="Usuario">Usuario</option>
+				<option value="Experto">Experto</option>
+				<option value="Desarrollador">Desarrollador</option>
+			</select><br><br>
+			<fieldset>
+				<legend>
+					Datos del registro
+				</legend>
+				<label for="nick">Nickname:</label>
+				<input type="text" name="nick" id="nick"><br><br>
+				<label for="pass">Password:</label>
+				<input type="password" name="pass" id="pass"><br><br>
+				<label for="vpass">Verify Password:</label>
+				<input type="password" name="vpass" id="vpass"><br>
+			</fieldset>
+				<h3>Formas de pago:</h3>
+				<input type="radio" name="pay">Visa
+				<input type="radio" name="pay">Paypal
+				<input type="radio" name="pay">MasterCard<br>
+				<img src="visa.jpg" alt="visa" width="80">
+				<img src="paypal.png" alt="paypal" width="80">
+				<img src="mastercard.jpg" alt="mastercard" width="80"><br><br>
+				<label for="tarjeta">Numero de la tarjeta</label><br>
+					<textarea name="tarjeta" id="tarjeta" rows="1" cols="40">
+				</textarea>
+			<br><br><input type="submit">
+		</form>
+	</body>
+</html>

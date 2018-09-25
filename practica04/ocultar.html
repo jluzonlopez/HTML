@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+	<title>Jluzon Rejilla de Bootstrap con Jquery</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<style>
+		#cabecera {
+			color: white;
+			background-color: black;
+			text-align: center;
+		}
+
+		#r {
+			color: white;
+			background-color: red;
+			text-align: center;
+		}
+
+		.nombres {
+			color: red;
+			background-color: lightblue;
+			font-style: italic;
+			font-size: 200%;
+		}
+
+		.oculto {
+			display: none;
+		}
+	</style>
+</head>
+
+<body>
+	<button data-toggle="tooltip" title="Quitar/mostrar descripciones" id="boton01" class="btn btn-warning" type="button">Quitar descripción</button>
+	<button data-toggle="tooltip" title="Quitar/mostrar Wikipedias" id="boton02" class="btn btn-warning" type="button">Wikipedias</button>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-8" id="cabecera">
+				<h1>Mejores superheroes de Marvel</h1>
+			</div>
+			<div class="col-xs-4" id="r">
+				<img src="photos/marvel.png" alt="super" width="175">
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-4">
+				<img src="photos/spider.jpeg" alt="spider" width="140">
+			</div>
+			<div class="col-xs-4">
+				<img src="photos/ironman.jpg" alt="ironman" width="140">
+			</div>
+			<div class="col-xs-4">
+				<img src="photos/nova.png" alt="nova" width="140">
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-4">
+				<p class="nombres">
+					Spiderman
+				</p>
+			</div>
+			<div class="col-xs-4">
+				<p class="nombres">
+					Ironman
+				</p>
+			</div>
+			<div class="col-xs-4">
+				<p class="nombres">
+					Nova
+				</p>
+			</div>
+		</div>
+	</div>
+	<div id="descripciones" class="oculto">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-4">
+					<p>
+						Spider-Man (llamado Hombre Araña en muchas de las traducciones al español) es un personaje ficticio y un superhéroe que aparece en los libros e historietas publicados por Marvel Comics. Fue creado por Stan Lee y Steve Ditko. Su primera aparición fue en
+						el número 15 de Amazing Fantasy en agosto de 1962. Lee y Ditko lo concibieron como un huérfano criado por su tío Ben y su tía May. Al ser adolescente, tiene que lidiar con todos los problemas típicos de un joven de su edad además de enfrentarse
+						a los criminales con un disfraz rojo y azul. Entre sus superpoderes se encuentra una gran agilidad y flexibilidad, así como la capacidad de aferrarse a la mayoría de superficies. Además logró crear unos lanzatelarañas o lanzarredes. Otro de sus
+						superpoderes principales es su «sentido arácnido» el cual le avisa cuando está en peligro o cuando el peligro se acerca.
+					</p>
+				</div>
+				<div class="col-xs-4">
+					<p>
+						Iron Man es uno de los superhéroes más conocidos en todo el mundo. Anthony "Tony" Stark nació con una inteligencia extrema. Después de la muerte de sus padres cuando tenía 21 años, Stark heredó Stark Industries. Después de ser herido, construyó una armadura
+						que ayudaría a mantenerlo con vida. Stark ayudó a organizar el equipo de superhéroes, Los Vengadores. Originalmente, Tony Stark no tenía poderes, y dependía de su armadura para todas las situaciones, hasta que se inyectó el Virus Extremis y más
+						tarde tuvo un Arc Reactor implantado en su pecho, ganando nuevas habilidades e intelecto.
+					</p>
+				</div>
+				<div class="col-xs-4">
+					<p>
+						Richard Rider, un estudiante de la Escuela Secundaria ficticia Harry S. Truman en Hempstead, Nueva York, es elegido al azar por el alienígena Rhomann Dey, último Centurión Nova superviviente de la élite del Cuerpo Nova del planeta Xandar, para heredar
+						su poder y sucederle en el rango de Nova Prime después de la destrucción de su mundo por el intergaláctico pirata Zorr. Habiendo sido mortalmente herido en la batalla que hizo trizas a Xandar, Dey logra rastrear a Zorr hasta la Tierra pero es incapaz
+						de derrotarlo debido a la gravedad de sus heridas. Cerca de la muerte, Dey decide transferir su poder a un ser humano desprevenido en el planeta de abajo, rezando por que quienquiera que encuentre ocupará su causa.Rider obtiene el uniforme y los
+						poderes de un Centurión, pero con poca instrucción sobre el uso de esos nuevos poderes. Rebosante de alegría, Rider ansiosamente toma la vida de un superhéroe, luchando contra supervillanos disfrazados en Nueva York y poco a poco aprendiendo a controlar
+						sus nuevas habilidades. Llamándose a sí mismo Nova, él hace archienemigos de matones a nivel de calle y amenazas de nivel cósmicas por igual, luchando contra villanos como Cóndor y Fuente de Poder, Cabeza de Diamante, el Corruptor, y la Esfinge.
+						Nova también se alía con Spider-Man para capturar a Fotón, que había matado al tío de Richard Rider, Ralph Rider,antes de finalmente optar por revelar su identidad secreta a su familia
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="wiki" class="oculto">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-3">
+					<p>
+						<a href="https://es.wikipedia.org/wiki/Spider-Man">Wikipedia Spiderman</a>
+					</p>
+				</div>
+				<div class="col-xs-3">
+					<p>
+						<a href="https://es.wikipedia.org/wiki/Iron_Man">Wikipedia Ironman</a>
+					</p>
+				</div>
+				<div class="col-xs-3">
+					<p>
+						<a href="https://es.wikipedia.org/wiki/Nova_(Richard_Rider)">Wikipedia Nova</a>
+					</p>
+				</div>
+				<div class="col-xs-3">
+					<p>
+						<a href="http://marvel.com/">Aprende más sobre Marvel</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		$(document).ready(function() {
+			$("#boton01").click(function() {
+				$("#descripciones").toggleClass("oculto");
+			});
+			$("#boton02").click(function() {
+				$("#wiki").toggleClass("oculto");
+			});
+			$('[data-toggle="tooltip"]').tooltip();
+		});
+	</script>
+</body>
+
+</html>

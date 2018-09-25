@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+	<title>Jluzon Storage</title>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="sesion.js"></script>
+</head>
+
+<body>
+	<div id="out">--</div><br>
+	<button data-toggle="tooltip" title="Borrar" id="boton" class="btn btn-warning" type="button">Delete</button>
+	<script>
+		$(document).ready(function() {
+			let options = {
+				enableHighAccuracy: true,
+				timeout: 5000,
+				maximumAge: 0
+			};
+
+			function success(pos) {
+				let x = pos.coords;
+				$("#out").text(getLocation(x));
+			};
+
+			function error(err) {
+				console.warn(`ERROR(${err.code}): ${err.message}`);
+			};
+
+			$("#boton").click(function() {
+				$("#out").text(deleteLocation());
+			});
+
+			navigator.geolocation.getCurrentPosition(success, error, options);
+		});
+	</script>
+</body>
+
+</html>
