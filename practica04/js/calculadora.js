@@ -83,12 +83,15 @@ function getKey(tecla, calc){
 						calc.oper = tecla;
 						r = calc.op1;
 					}else if(calc.est === 3){
-						if(tecla === '+' || tecla === '-' || tecla === '='){
+						if(tecla === '+' || tecla === '-'){
 							r = docal(calc);
 							calc.op1 = r;
 							calc.op2 = 0;
 							calc.oper = tecla;
 							calc.est = 2;
+						}else if(tecla === '='){
+							r = docal(calc);
+							calc.est = 0;
 						}else{
 							r = calc.op2;
 							calc.op1 = r;
